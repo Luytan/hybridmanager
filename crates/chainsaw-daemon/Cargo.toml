@@ -15,6 +15,8 @@ tokio.workspace = true
 zbus.workspace = true
 config.workspace = true
 serde.workspace = true
+log = "0.4"
+env_logger = "0.11"
 
 [[bin]]
 name = "chainsawd"
