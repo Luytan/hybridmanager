@@ -32,8 +32,11 @@ make build
 ## Prototype Flow
 
 ```bash
-# list modes
+# list GPUs (table with block indicator)
 chainsaw list
+
+# list supported modes
+chainsaw list-modes
 
 # check mode
 chainsaw get
@@ -41,7 +44,17 @@ chainsaw get
 # set mode
 chainsaw set integrated
 chainsaw set hybrid
+
+# block/unblock one GPU by numeric id
+chainsaw gpu <id> block on
+chainsaw gpu <id> block off
 ```
+
+## Output Notes
+
+- `chainsaw list` prints a GPU table with: `ID`, `NAME`, `PCI`, `RENDER`, `DEFAULT`, `BLOCKED`.
+- `BLOCKED=on*` means one or more eBPF block entries are active for that GPU.
+- GPU ids are the values shown in the `ID` column and are used by `chainsaw gpu <id> ...`.
 
 ## Notes
 
