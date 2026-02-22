@@ -1,0 +1,12 @@
+[package]
+name = "chainsaw-core"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Core library for chainsaw GPU management tool"
+
+[dependencies]
+# No external dependencies for now based on analysis

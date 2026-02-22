@@ -1,0 +1,19 @@
+[package]
+name = "chainsaw-cli"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "CLI for chainsaw GPU management tool"
+
+[dependencies]
+chainsaw-core = { path = "../chainsaw-core" } # Just in case, though maybe unused
+tokio.workspace = true
+zbus.workspace = true
+clap.workspace = true
+
+[[bin]]
+name = "chainsaw"
+path = "src/main.rs"

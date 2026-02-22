@@ -1,0 +1,30 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/chainsaw-core",
+    "crates/chainsaw-daemon",
+    "crates/chainsaw-cli",
+    "crates/chainsaw-ebpf-loader",
+]
+
+[workspace.package]
+version = "0.1.4"
+authors = ["Luytan <luytan@khora.me>"]
+repository = "https://github.com/Luytan/chainsaw"
+edition = "2024"
+rust-version = "1.91.1"
+license = "None"
+
+[workspace.dependencies]
+tokio = { version = "1.48.0", features = ["full"] }
+zbus = { version = "5.12.0", features = ["tokio"] }
+clap = { version = "4.5.51", features = ["derive"] }
+config = { version = "0.15.18", features = ["toml"] }
+serde = { version = "1.0", features = ["derive"] }
+chainsaw-core = { path = "crates/chainsaw-core" }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

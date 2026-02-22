@@ -1,0 +1,17 @@
+[Unit]
+Description=Chainsaw Daemon
+Before=graphical.target
+Before=multi-user.target
+Before=display-manager.service
+Before=nvidia-powerd.service
+
+
+[Service]
+Type=dbus
+BusName=com.chainsaw.daemon
+ExecStart=/usr/bin/chainsawd
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=getty.target

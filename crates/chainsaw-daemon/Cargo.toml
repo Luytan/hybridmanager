@@ -1,0 +1,23 @@
+[package]
+name = "chainsaw-daemon"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Daemon for chainsaw GPU management tool"
+
+[dependencies]
+chainsaw-core = { path = "../chainsaw-core", package = "chainsaw-core" }
+chainsaw-ebpf-loader = { path = "../chainsaw-ebpf-loader" }
+tokio.workspace = true
+zbus.workspace = true
+config.workspace = true
+serde.workspace = true
+
+[[bin]]
+name = "chainsawd"
+path = "src/main.rs"
+
+
